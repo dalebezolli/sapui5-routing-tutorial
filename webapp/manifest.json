@@ -62,6 +62,30 @@
 			"": {
 				"dataSource": "employeeRemote"
 			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"type": "View",
+				"viewType": "XML",
+				"path": "sap.ui.demo.nav.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"transition": "slide",
+				"async": true
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "appHome",
+				"target": "home"
+			}],
+			"targets": {
+				"home": {
+					"id": "home",
+					"name": "Home",
+					"level": 1
+				}
+			}
 		}
 	}
 }
