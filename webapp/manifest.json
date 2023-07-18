@@ -72,7 +72,10 @@
 				"controlId": "app",
 				"controlAggregation": "pages",
 				"transition": "slide",
-				"async": true
+				"async": true,
+				"bypassed": {
+					"target": "notFound"
+				}
 			},
 			"routes": [{
 				"pattern": "",
@@ -84,6 +87,11 @@
 					"id": "home",
 					"name": "Home",
 					"level": 1
+				},
+				"notFound": {
+					"id": "notFound",
+					"name": "NotFound",
+					"transition": "show"
 				}
 			}
 		}
