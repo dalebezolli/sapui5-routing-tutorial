@@ -1,7 +1,7 @@
 sap.ui.define([
-   "sap/ui/core/mvc/Controller"
-], function (Controller) {
+   "sap/ui/demo/nav/controller/BaseController"
+], function (BaseController) {
    "use strict";
 
-   return Controller.extend("sap.ui.demo.nav.controller.Home", {});
+   return BaseController.extend("sap.ui.demo.nav.controller.Home", {});
 });
