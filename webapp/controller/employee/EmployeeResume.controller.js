@@ -9,6 +9,7 @@ sap.ui.define([
 	return BaseController.extend("sap.ui.demo.nav.controller.employee.EmployeeResume", {
 		onInit: function () {
 			const model = new JSONModel({});		
+			this.getView().setModel(model, "view");
 
 			var oRouter = this.getRouter();
 			oRouter.getRoute("employeeResume").attachMatched(this._onRouteMatched, this);
@@ -39,6 +40,11 @@ sap.ui.define([
 			const query = oArgs["?query"];
 			if(query && _validTabKeys.includes(query.tab)) {
 				oView.getModel("view").setProperty("/selectedTabKey", query.tab);
+
+				if(query.tab === "Hobbies" || query.tab === "Notes") {
+					console.log(query.tab);
+					this.getRouter().getTargets().display(`resumeTab${query.tab}`);
+				}
 			} else {
 				this.getRouter().navTo("employeeResume", {
 					employeeID: oArgs.employeeID,
