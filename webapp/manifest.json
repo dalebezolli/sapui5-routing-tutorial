@@ -81,6 +81,10 @@
 				"pattern": "",
 				"name": "appHome",
 				"target": "home"
+			}, {
+				"pattern": "employeeList",
+				"name": "employeeList",
+				"target": "employees"
 			}],
 			"targets": {
 				"home": {
@@ -92,6 +96,12 @@
 					"id": "notFound",
 					"name": "NotFound",
 					"transition": "show"
+				},
+				"employees": {
+					"id": "employeeList",
+					"name": "EmployeeList",
+					"path": "sap.ui.demo.nav.view.employee",
+					"level": "2"
 				}
 			}
 		}
