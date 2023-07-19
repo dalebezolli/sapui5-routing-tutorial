@@ -11,7 +11,12 @@
         <content>
             <List id="employeeList" headerText="{i18n>employeeListHeaderText}" items="{/Employees}" >
                 <items>
-                    <StandardListItem title="{FirstName} {LastName}" iconDensityAware="false" iconInset="false"  />
+                    <StandardListItem 
+                        title="{FirstName} {LastName}" 
+                        iconDensityAware="false" 
+                        iconInset="false"
+                        type="Navigation"
+                        press=".onListItemPressed" />
                 </items>
             </List>
         </content>
