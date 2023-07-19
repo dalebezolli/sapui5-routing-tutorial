@@ -6,6 +6,7 @@
       <content>
          <Button id="displayNotFoundButton" text="{i18n>DisplayNotFound}" class="sapUiTinyMarginEnd" press=".onDisplayNotFound" />
          <Button id="displayEmployeeList" text="{i18n>DisplayEmployeeList}" class="sapUiTinyMarginEnd" press=".onNavToEmployeeList" />
+         <Button id="employeeOverviewBtn" text="{i18n>ShowEmployeeOverview}" press=".onNavToEmployeeOverview" class="sapUiTinyMarginEnd"/>
       </content>
    </Page>
 </mvc:View>
