@@ -7,6 +7,11 @@ sap.ui.define([
         onInit: function() {
             this.getRouter().getRoute("employee").attachMatched(this._onRouteMatched, this);
         },
+        onShowResume : function (event) {
+			this.getRouter().navTo("employeeResume", {
+				employeeID : this.getView().getElementBinding().getBoundContext().getProperty("EmployeeID")
+			});
+		},
         _onRouteMatched: function(event) {
             const employeeID = event.getParameter("arguments").employeeID;
             const view = this.getView();
