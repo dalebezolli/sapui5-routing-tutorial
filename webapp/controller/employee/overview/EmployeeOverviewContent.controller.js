@@ -156,6 +156,14 @@ sap.ui.define([
 			// Note: no input validation is implemented here
 			this._oVSD.setSelectedSortItem(sSortField);
 			this._oVSD.setSortDescending(bSortDescending);
+		},
+
+		onItemPressed: function(event) {
+			const item = event.getParameter("listItem");
+			this.getRouter().navTo("employeeResume", {
+				employeeID: item.getBindingContext().getProperty("EmployeeID"),
+				"?query": { tab: "Info" }
+			});
 		}
 
 	});
