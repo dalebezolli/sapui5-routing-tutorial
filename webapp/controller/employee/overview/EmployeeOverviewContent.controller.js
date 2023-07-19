@@ -18,14 +18,25 @@ sap.ui.define([
 	return BaseController.extend("sap.ui.demo.nav.controller.employee.overview.EmployeeOverviewContent", {
 
 		onInit: function () {
+			const router = this.getRouter();		
+
 			this._oTable = this.byId("employeesTable");
 			this._oVSD = null;
 			this._sSortField = null;
 			this._bSortDescending = false;
 			this._aValidSortFields = ["EmployeeID", "FirstName", "LastName"];
 			this._sSearchQuery = null;
+			this._routerArgs = null;
 
 			this._initViewSettingsDialog();
+
+			router.getRoute("employeeOverview").attachMatched(this._onRouteMatched, this);
+		},
+		_onRouteMatched: function(event) {
+			this._routerArgs = event.getParameter("arguments");
+			this._routerArgs["?query"] = this._routerArgs["?query"] || {};
+
+			this._applySearchFilter(this._routerArgs["?query"].search);
 		},
 
 		onSortButtonPressed : function () {
@@ -33,7 +44,9 @@ sap.ui.define([
 		},
 
 		onSearchEmployeesTable : function (oEvent) {
-			this._applySearchFilter( oEvent.getSource().getValue() );
+			const router = this.getRouter();
+			this._routerArgs["?query"].search = oEvent.getSource().getValue();
+			router.navTo("employeeOverview", this._routerArgs, true);
 		},
 
 		_initViewSettingsDialog : function () {
