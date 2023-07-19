@@ -90,7 +90,7 @@
 				"name": "employee",
 				"target": "employee"
 			}, {
-				"pattern": "employees/{employeeID}/resume",
+				"pattern": "employees/{employeeID}/resume:?query:",
 				"name": "employeeResume",
 				"target": "employeeResume"
 			}],
